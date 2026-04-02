@@ -1,0 +1,142 @@
+@import 'tailwindcss';
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #011627;
+	color: #d6deeb;
+	min-height: 100vh;
+	font-family:
+		'JetBrains Mono',
+		'Fira Code',
+		ui-monospace,
+		'Cascadia Code',
+		monospace;
+}
+
+.dot-bg {
+	background-image: radial-gradient(circle, rgba(130, 170, 255, 0.1) 1px, transparent 1px);
+	background-size: 28px 28px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+::-webkit-scrollbar-track {
+	background: #011627;
+}
+::-webkit-scrollbar-thumb {
+	background: #1e3a5f;
+	border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #82aaff;
+}
+
+/* Selection */
+::selection {
+	background: rgba(130, 170, 255, 0.3);
+}
+
+/* Inline code */
+:not(pre) > code {
+	background: #0a1f35;
+	color: #82aaff;
+	padding: 2px 6px;
+	border-radius: 4px;
+	font-size: 0.875em;
+	border: 1px solid #1e3a5f;
+}
+
+/* Doc prose */
+.doc-prose h2 {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #d6deeb;
+	margin-top: 2.5rem;
+	margin-bottom: 1rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid #1e3a5f;
+}
+
+.doc-prose h3 {
+	font-size: 1.125rem;
+	font-weight: 700;
+	color: #82aaff;
+	margin-top: 2rem;
+	margin-bottom: 0.75rem;
+}
+
+.doc-prose p {
+	color: #8baabe;
+	line-height: 1.8;
+	margin-bottom: 1rem;
+}
+
+.doc-prose ul {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 1rem;
+}
+
+.doc-prose ul li {
+	color: #8baabe;
+	padding: 0.25rem 0;
+	padding-left: 1.5rem;
+	position: relative;
+}
+
+.doc-prose ul li::before {
+	content: '▸';
+	color: #21c7a8;
+	position: absolute;
+	left: 0;
+}
+
+.doc-prose pre {
+	background: #010e1a;
+	border: 1px solid #1e3a5f;
+	border-radius: 8px;
+	padding: 1.25rem 1.5rem;
+	overflow-x: auto;
+	margin-bottom: 1.5rem;
+	font-size: 0.875rem;
+	line-height: 1.7;
+}
+
+.doc-prose a {
+	color: #82aaff;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.doc-prose a:hover {
+	color: #9bb9ff;
+}
+
+/* Step indicator */
+.step-block {
+	display: flex;
+	gap: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+.step-number {
+	flex-shrink: 0;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background: #0a1f35;
+	border: 1px solid #82aaff;
+	color: #82aaff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.75rem;
+	font-weight: 700;
+	margin-top: 0.25rem;
+}
