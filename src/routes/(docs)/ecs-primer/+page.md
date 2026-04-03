@@ -1,4 +1,4 @@
-# ECS Primer
+# ECS入門
 
 >Ecsonでの開発を円滑に進めるために、ECS（Entity Component System）の基本概念を学びます。
 
