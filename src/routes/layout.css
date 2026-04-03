@@ -143,24 +143,31 @@ body {
 	top: 0.4em;
 }
 
-/* Code */
+/* Code — shiki sets background via inline style, we add border/radius */
 .doc-prose pre {
-	background: #010e1a;
 	border: 1px solid #1e3a5f;
 	border-radius: 8px;
 	padding: 1.25rem 1.5rem;
 	overflow-x: auto;
 	margin: 1.5rem 0;
 	font-size: 0.875rem;
-	line-height: 1.75;
+	line-height: 0.7; /* コードブロックの行間 */
 }
 
 .doc-prose pre code {
-	background: none;
-	color: #d6deeb;
+	background: none !important;
 	padding: 0;
 	border: none;
 	font-size: inherit;
+	/* shiki uses inline span styles — don't override color here */
+}
+
+/* shiki wraps lines in <span class="line">.
+   Must be display:block to prevent the newlines in the HTML source
+   from being rendered as extra blank lines inside <pre>. */
+.doc-prose pre .line {
+	display: block;
+	min-height: 1em;
 }
 
 /* Blockquote */
