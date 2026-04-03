@@ -17,24 +17,23 @@ cargo add ecson
 ```rust
 use ecson::prelude::*;
 
-fn main() {
-    EcsonApp::new()
-        .add_plugin(WebSocketPlugin::new("127.0.0.1:8080"))
-        .add_system(Update, echo_system)
-        .run();
-}
-
 fn echo_system(
-    mut reader: EventReader<MessageReceived>,
-    mut writer: EventWriter<MessageSend>,
+    mut ev_recv: MessageReader<MessageReceived>,
+    mut ev_send: MessageWriter<SendMessage>,
 ) {
-    for event in reader.read() {
-        // 受信したメッセージをそのまま送り返す
-        writer.send(MessageSend {
-            target: event.sender,
-            content: event.content.clone(),
+    for msg in ev_recv.read() {
+        ev_send.write(SendMessage {
+            target: msg.entity,
+            payload: msg.payload.clone(),
         });
     }
+}
+
+fn main() {
+    EcsonApp::new()
+        .add_plugins(EcsonWebSocketPlugin::new("127.0.0.1:8080"))
+        .add_systems(Update, echo_system)
+        .run();
 }
 ```
 
@@ -45,7 +44,7 @@ cargo run
 ```
 
 ```
-[INFO] Ecson server listening on ws://127.0.0.1:8080
+EcsonApp Started🚀
 ```
 
 ## 動作確認

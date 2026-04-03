@@ -23,10 +23,10 @@
 
 			<div class="flex items-center gap-1 text-sm">
 				<a
-					href={resolve("/installation")}
+					href={resolve("/introduction")}
 					class="rounded px-3 py-1.5 text-[#8baabe] transition-colors hover:bg-[#0a1f35] hover:text-[#d6deeb]"
 				>
-					Docs
+					Get Started
 				</a>
 				<a
 					href={resolve("/tutorial")}

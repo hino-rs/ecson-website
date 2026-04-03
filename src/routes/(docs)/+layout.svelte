@@ -10,7 +10,6 @@
 				{ label: 'Introduction', href: '/introduction' },
 				{ label: 'ECS Primer', href: '/ecs-primer' },
 				{ label: 'Quick Start', href: '/quick-start' },
-				{ label: 'Installation', href: '/installation' }
 			]
 		},
 		{
@@ -47,13 +46,13 @@
 	<aside
 		class="sticky top-[57px] hidden h-[calc(100vh-57px)] w-60 shrink-0 overflow-y-auto border-r border-[#1e3a5f] px-3 py-8 lg:block"
 	>
-		{#each navGroups as group}
+		{#each navGroups as group (group)}
 			<div class="mb-5">
 				<p class="mb-1.5 px-3 text-xs font-bold uppercase tracking-widest text-[#5f7e97]">
 					{group.title}
 				</p>
 				<ul>
-					{#each group.items as item}
+					{#each group.items as item (item)}
 						{@const isActive = currentPath === item.href}
 						<li>
 							<a

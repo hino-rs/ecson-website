@@ -54,7 +54,7 @@
 		<!-- CTAs -->
 		<div class="flex flex-wrap justify-center gap-4">
 			<a
-				href={resolve("/installation")}
+				href={resolve("/introduction")}
 				class="rounded bg-[#82aaff] px-6 py-3 text-sm font-bold text-[#011627] transition-colors hover:bg-[#9bb9ff]"
 			>
 				Get Started →
@@ -129,9 +129,9 @@
 		$ cargo add ecson
 	</div>
 	<a
-		href={resolve("/installation")}
+		href={resolve("/quick-start")}
 		class="text-sm text-[#82aaff] underline underline-offset-4 hover:text-[#9bb9ff]"
 	>
-		インストールガイドを見る →
+		クイックスタートを見る →
 	</a>
 </section>
