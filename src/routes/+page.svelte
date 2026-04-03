@@ -76,28 +76,35 @@
 		</div>
 
 		<!-- Code snippet -->
-		<div
-			class="mx-auto mt-16 max-w-2xl rounded-lg border border-[#1e3a5f] bg-[#010e1a] text-left"
-		>
-			<!-- Window chrome -->
-			<div class="flex items-center gap-2 border-b border-[#1e3a5f] px-4 py-3">
-				<span class="h-3 w-3 rounded-full bg-[#ef5350]"></span>
-				<span class="h-3 w-3 rounded-full bg-[#ffbc42]"></span>
-				<span class="h-3 w-3 rounded-full bg-[#22da6e]"></span>
-				<span class="ml-2 text-xs text-[#5f7e97]">src/main.rs</span>
-			</div>
-			<pre
-				class="overflow-x-auto px-6 py-5 text-sm leading-7"
-			><code><span class="text-[#5f7e97]">use</span><span class="text-[#d6deeb]"> ecson::</span><span class="text-[#82aaff]">prelude</span><span class="text-[#d6deeb]">::*;</span>
+<div class="mx-auto mt-16 max-w-2xl rounded-lg border border-[#1e3a5f] bg-[#010e1a] text-left">
+  <div class="flex items-center gap-2 border-b border-[#1e3a5f] px-4 py-3">
+    <span class="h-3 w-3 rounded-full bg-[#ef5350]"></span>
+    <span class="h-3 w-3 rounded-full bg-[#ffbc42]"></span>
+    <span class="h-3 w-3 rounded-full bg-[#22da6e]"></span>
+    <span class="ml-2 text-xs text-[#5f7e97]">src/main.rs</span>
+  </div>
 
-<span class="text-[#5f7e97]">fn</span> <span class="text-[#82aaff]">main</span><span class="text-[#d6deeb]">() &#123;</span>
-    <span class="text-[#d6deeb]">EcsonApp::new()</span>
-        <span class="text-[#d6deeb]">.</span><span class="text-[#21c7a8]">add_plugin</span><span class="text-[#d6deeb]">(WebSocketPlugin::new(<span class="text-[#e29945]">"127.0.0.1:8080"</span>span>))</span>
-        <span class="text-[#d6deeb]">.</span><span class="text-[#21c7a8]">add_system</span><span class="text-[#d6deeb]">(Update, echo_system)</span>
-        <span class="text-[#d6deeb]">.</span><span class="text-[#21c7a8]">run</span><span class="text-[#d6deeb]">();</span>
+  <pre class="overflow-x-auto px-6 py-5 text-sm leading-6"><code><span class="text-[#57a4ea]">use</span><span class="text-[#50ccb8]"> ecson</span>::<span class="text-[#50ccb8]">prelude</span><span class="text-[#d6deeb]">::*;</span>
+
+<span class="text-[#57a4ea]">fn</span> <span class="text-[#efd085]">echo_system</span><span class="text-[#fd71b8]">(</span>
+    <span class="text-[#57a4ea]">mut</span> <span class="text-[#9cdcfe]">messages</span>: <span class="text-[#50ccb8]">MessageReader</span><span class="text-[#d6deeb]">&lt;</span><span class="text-[#50ccb8]">MessageReceived</span><span class="text-[#d6deeb]">&gt;,</span>
+    <span class="text-[#57a4ea]">mut</span> <span class="text-[#9cdcfe]">outbound</span>: <span class="text-[#50ccb8]">MessageWriter</span><span class="text-[#d6deeb]">&lt;</span><span class="text-[#50ccb8]">SendMessage</span><span class="text-[#d6deeb]">&gt;,</span>
+<span class="text-[#fd71b8]">)</span> <span class="text-[#fd71b8]">&#123;</span>
+    <span class="text-[#fd71b8]">for</span> <span class="text-[#d6deeb]">message</span> <span class="text-[#fd71b8]">in</span> <span class="text-[#d6deeb]">messages.</span><span class="text-[#efd085]">read</span><span class="text-[#15b9ff]">(</span><span class="text-[#15b9ff]">)</span> <span class="text-[#fd71b8]">&#123;</span>
+        <span class="text-[#9cdcfe]">outbound.</span><span class="text-[#efd085]">write</span><span class="text-[#15b9ff]">(</span><span class="text-[#50ccb8]">SendMessage</span> <span class="text-[#fd71b8]">&#123;</span>
+            <span class="text-[#9cdcfe]">target<span class="text-[#d6deeb]">: </span>message<span class="text-[#d6deeb]">.</span>entity<span class="text-[#d6deeb]">,</span></span>
+            <span class="text-[#9cdcfe]">payload<span class="text-[#d6deeb]">: </span>message<span class="text-[#d6deeb]">.</span>payload<span class="text-[#d6deeb]">.</span></span><span class="text-[#efd085]">clone</span><span class="text-[#15b9ff]">(</span><span class="text-[#15b9ff]">)</span><span class="text-[#d6deeb]">,</span>
+        <span class="text-[#fd71b8]">&#125;</span><span class="text-[#15b9ff]">)</span><span class="text-[#d6deeb]">;</span>
+    <span class="text-[#fd71b8]">&#125;</span>
+<span class="text-[#fd71b8]">&#125;</span>
+
+<span class="text-[#57a4ea]">fn</span> <span class="text-[#efd085]">main</span><span class="text-[#fd71b8]">() &#123;</span>
+    <span class="text-[#50ccb8]">EcsonApp</span><span class="text-[#FFFFFF]">::</span><span class="text-[#efd085]">new</span><span class="text-[#fd71b8]">()</span>
+        <span class="text-[#d6deeb]">.</span><span class="text-[#efd085]">add_plugin</span><span class="text-[#d6deeb]"><span class="text-[#fd71b8]">(</span><span class="text-[#50ccb8]">EcsonWebSocketPlugin</span>::<span class="text-[#efd085]">new</span><span class="text-[#15b9ff]">(</span><span class="text-[#e29945]">"127.0.0.1:8080"</span><span class="text-[#15b9ff]">)</span><span class="text-[#fd71b8]">)</span></span>
+        <span class="text-[#d6deeb]">.</span><span class="text-[#efd085]">add_system</span><span class="text-[#d6deeb]"><span class="text-[#fd71b8]">(</span><span class="text-[#50ccb8]">Update</span>, <span class="text-[#efd085]">echo_system</span><span class="text-[#fd71b8]">)</span></span>
+        <span class="text-[#d6deeb]">.</span><span class="text-[#efd085]">run</span><span class="text-[#fd71b8]">()</span>;
 <span class="text-[#d6deeb]">&#125;</span></code></pre>
-		</div>
-	</div>
+</div>
 </section>
 
 <!-- Features -->
