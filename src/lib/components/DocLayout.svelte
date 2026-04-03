@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { Snippet } from 'svelte';
 
 	interface NavItem {
@@ -21,28 +22,89 @@
 
 	const navGroups: NavGroup[] = [
 		{
-			title: 'Getting Started',
+			title: 'Introduction',
 			items: [
-				{ label: 'インストール', href: '/installation' },
-				{ label: 'Tutorials', href: '/tutorials' }
+				{ label: 'l', href: 'introduction' },
+			]
+		},
+		{
+			title: 'ECS Primer',
+			items: [
+				{ label: 'l', href: 'ecs-primer' },
+			]
+		},
+		{
+			title: 'Quick Start',
+			items: [
+				{ label: 'l', href: 'quick-start' },
+			]
+		},
+		{
+			title: 'Tutorial',
+			items: [
+				{ label: 'l', href: 'tutorial' },
 			]
 		},
 		{
 			title: 'Core Concepts',
 			items: [
-				{ label: 'ECS の基本', href: '/docs/ecs' },
-				{ label: 'Plugin システム', href: '/docs/plugins' },
-				{ label: 'System スケジューリング', href: '/docs/systems' }
+				{ label: 'l', href: 'concept' },
+			]
+		},
+		{
+			title: 'Components',
+			items: [
+				{ label: 'l', href: 'components' },
+			]
+		},
+		{
+			title: 'Events',
+			items: [
+				{ label: 'l', href: 'events' },
+			]
+		},
+		{
+			title: 'Resources',
+			items: [
+				{ label: 'l', href: 'resources' },
+			]
+		},
+		{
+			title: 'Plugins',
+			items: [
+				{ label: 'l', href: 'plugins' },
 			]
 		},
 		{
 			title: 'Networking',
 			items: [
-				{ label: 'WebSocket', href: '/docs/websocket' },
-				{ label: 'イベント送受信', href: '/docs/events' },
-				{ label: 'コネクション管理', href: '/docs/connections' }
+				{ label: 'l', href: 'networking' },
 			]
-		}
+		},
+		{
+			title: 'Examples',
+			items: [
+				{ label: 'l', href: 'examples' },
+			]
+		},
+		{
+			title: 'API Reference',
+			items: [
+				{ label: 'l', href: 'api-reference' },
+			]
+		},
+		{
+			title: 'Changelog',
+			items: [
+				{ label: 'l', href: 'changelog' },
+			]
+		},
+		{
+			title: 'Contributing',
+			items: [
+				{ label: 'l', href: 'contributing' },
+			]
+		},
 	];
 </script>
 
@@ -51,16 +113,16 @@
 	<aside
 		class="sticky top-[57px] hidden h-[calc(100vh-57px)] w-64 shrink-0 overflow-y-auto border-r border-[#1e3a5f] px-4 py-8 lg:block"
 	>
-		{#each navGroups as group}
+		{#each navGroups as group (group)}
 			<div class="mb-6">
 				<p class="mb-2 px-3 text-xs font-bold uppercase tracking-widest text-[#5f7e97]">
 					{group.title}
 				</p>
 				<ul>
-					{#each group.items as item}
+					{#each group.items as item (item)}
 						<li>
 							<a
-								href={item.href}
+								href={resolve(`/${item.href}`)}
 								class="block rounded px-3 py-1.5 text-sm text-[#8baabe] transition-colors hover:bg-[#0a1f35] hover:text-[#d6deeb]"
 							>
 								{item.label}

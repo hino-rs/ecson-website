@@ -29,7 +29,7 @@
 					Docs
 				</a>
 				<a
-					href={resolve("/tutorials")}
+					href={resolve("/tutorial")}
 					class="rounded px-3 py-1.5 text-[#8baabe] transition-colors hover:bg-[#0a1f35] hover:text-[#d6deeb]"
 				>
 					Tutorials

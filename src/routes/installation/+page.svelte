@@ -29,7 +29,6 @@
 	<h2>インストール手順</h2>
 
 	<div class="step-block">
-		<div class="step-number">1</div>
 		<div class="flex-1">
 			<h3>cargo add で追加</h3>
 			<p>Cargoを使ってEcsonを追加するのが最も簡単な方法です。</p>
@@ -37,33 +36,6 @@
 			<p>または <code>Cargo.toml</code> に直接記述することもできます。</p>
 			<pre><code>[dependencies]
 ecson = "0.1"</code></pre>
-		</div>
-	</div>
-
-	<div class="step-block">
-		<div class="step-number">2</div>
-		<div class="flex-1">
-			<h3>prelude をインポート</h3>
-			<p>
-				<code>ecson::prelude::*</code> をインポートすることで、
-				よく使うアイテムをすべて利用できます。
-			</p>
-			<pre><code>use ecson::prelude::*;
-
-fn main() &#123;
-    App::new()
-        .add_plugin(WebSocketPlugin)
-        .run();
-&#125;</code></pre>
-		</div>
-	</div>
-
-	<div class="step-block">
-		<div class="step-number">3</div>
-		<div class="flex-1">
-			<h3>ビルド & 起動</h3>
-			<pre><code>$ cargo run</code></pre>
-			<p>デフォルトでは <code>0.0.0.0:3000</code> でWebSocketサーバーが起動します。</p>
 		</div>
 	</div>
 
@@ -93,7 +65,7 @@ fn main() &#123;
 
 	<h2>次のステップ</h2>
 	<ul>
-		<li><a href={resolve("/tutorials")}>チュートリアルを始める</a> — 実際にサーバーを構築してみましょう</li>
+		<li><a href={resolve("/tutorial")}>チュートリアルを始める</a> — 実際にサーバーを構築してみましょう</li>
 		<li>
 			<a href="https://docs.rs/ecson" target="_blank" rel="noopener">API ドキュメント</a> — 詳細なAPIリファレンス
 		</li>
