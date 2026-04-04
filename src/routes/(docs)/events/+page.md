@@ -1,4 +1,4 @@
-# Events
+# イベント
 
 Ecsonのイベントシステムは `bevy_ecs` の `Message` をベースにしています。
 そのため、イベントと言う名称ですが、型としては`Message`を扱います。
@@ -420,3 +420,8 @@ pub struct ClientZoneChangedEvent {
     pub client_id: u64,
 }
 ```
+
+## 次のステップ
+
+- [Resources](/resources)
+- [Plugins](/plugins)
