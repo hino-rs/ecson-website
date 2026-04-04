@@ -162,8 +162,6 @@ fn my_system(query: Query<(&ClientId, Option<&Username>)>) {
 }
 ```
 
----
-
 ## Presenceコンポーネント
 
 `PresencePlugin` を追加すると使用できます。
@@ -191,8 +189,6 @@ fn my_system(query: Query<(&ClientId, &PresenceStatus)>) {
     }
 }
 ```
-
----
 
 ## Snapshotコンポーネント
 
@@ -226,8 +222,6 @@ pub struct SnapshotSubscriber;
 commands.entity(client_entity).insert(SnapshotSubscriber);
 ```
 
----
-
 ## Lobbyコンポーネント
 
 `LobbyPlugin` を追加すると使用できます。
@@ -253,8 +247,6 @@ fn my_system(query: Query<(&ClientId, Option<&InLobby>)>) {
     }
 }
 ```
-
----
 
 ## Spatialコンポーネント
 

@@ -17,8 +17,6 @@ fn my_system(
 }
 ```
 
----
-
 ## カスタムイベントを定義する
 
 組み込みイベントだけでなく、独自のイベントを定義してシステム間の通信に使うことができます。
@@ -140,8 +138,6 @@ fn system_b(mut ev: MessageReader<MyEvent>) { ... }
 
 `Message` イベントはフレームをまたいで保持されません。発行されたイベントはそのフレームのうちに読み取らないと失われます。特に `Update` で発行して `FixedUpdate` で読む場合、タイミングによっては取りこぼすことがあります。確実に処理したい場合は同じスケジュール内でシステムの順序を制御するか、両方 `FixedUpdate` にまとめましょう。
 
----
-
 ## コアイベント
 
 `ecson::prelude::*` に含まれており、追加の設定なしで使用できます。
@@ -239,8 +235,6 @@ fn on_disconnect(mut ev_disconnect: MessageReader<UserDisconnected>) {
 }
 ```
 
----
-
 ## Heartbeatイベント
 
 `HeartbeatPlugin` を追加すると使用できます。
@@ -262,8 +256,6 @@ fn on_timeout(mut ev_timeout: MessageReader<ClientTimedOutEvent>) {
     }
 }
 ```
-
----
 
 ## Presenceイベント
 
@@ -289,8 +281,6 @@ fn on_presence_changed(mut ev: MessageReader<PresenceChangedEvent>) {
 }
 ```
 
----
-
 ## Snapshotイベント
 
 `SnapshotPlugin` を追加すると使用できます。
@@ -314,8 +304,6 @@ fn on_snapshot_sent(mut ev: MessageReader<SnapshotSentEvent>) {
     }
 }
 ```
-
----
 
 ## Chatイベント
 
@@ -343,8 +331,6 @@ pub struct ChatMessageBroadcastedEvent {
     pub text: String,
 }
 ```
-
----
 
 ## Lobbyイベント
 
@@ -391,8 +377,6 @@ fn on_lobby_ready(mut ev: MessageReader<LobbyReadyEvent>) {
     }
 }
 ```
-
----
 
 ## Spatialイベント
 

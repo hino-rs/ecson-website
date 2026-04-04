@@ -13,8 +13,6 @@ fn my_system(
 }
 ```
 
----
-
 ## カスタムリソースを定義する
 
 ### 定義
@@ -128,8 +126,6 @@ fn my_system(room_map: Option<Res<RoomMap>>) {
 }
 ```
 
----
-
 ## 組み込みリソース
 
 ### `ConnectionMap`
@@ -210,8 +206,6 @@ fn main() {
         .run();
 }
 ```
-
----
 
 ## プラグイン別の組み込みリソース
 

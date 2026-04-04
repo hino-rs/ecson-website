@@ -17,7 +17,7 @@
 			items: [{ label: 'Tutorial', href: '/tutorial' }]
 		},
 		{
-			title: 'Core Concepts',
+			title: 'Concepts',
 			items: [
 				{ label: 'Core Concepts', href: '/core-concept' },
 				{ label: 'Components', href: '/components' },
