@@ -19,7 +19,7 @@
 		{
 			title: 'Core Concepts',
 			items: [
-				{ label: 'Core Concepts', href: '/concept' },
+				{ label: 'Core Concepts', href: '/core-concept' },
 				{ label: 'Components', href: '/components' },
 				{ label: 'Events', href: '/events' },
 				{ label: 'Resources', href: '/resources' },

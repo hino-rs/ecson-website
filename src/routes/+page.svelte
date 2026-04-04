@@ -60,7 +60,7 @@
 				Get Started →
 			</a>
 			<a
-				href={resolve("/tutorials")}
+				href={resolve("/tutorial")}
 				class="rounded border border-[#1e3a5f] px-6 py-3 text-sm text-[#d6deeb] transition-colors hover:border-[#82aaff] hover:text-[#82aaff]"
 			>
 				Browse Tutorials

@@ -248,5 +248,5 @@ fn main() {
 
 また、ここで手書きしたロジックは ChatFullPlugin として提供されています。実際のプロダクトでは組み込みプラグインを活用して、よりビジネスロジックの本質に集中することができます。
 
-- [Core Concepts](/concept) — Ecson固有概念について
+- [Core Concepts](/core-concept) — Ecson固有概念について
 - [Plugins](/plugins) — プラグイン一覧と作り方
