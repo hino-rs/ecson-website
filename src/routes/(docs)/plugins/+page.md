@@ -106,8 +106,6 @@ impl Plugin for MyPlugin {
 
 ### ネットワーク系
 
-ネットワークプラグインは必ず1つ追加する必要があります。複数を同時に使うことはできません。
-
 #### `EcsonWebSocketPlugin`
 
 WebSocketサーバーを起動します。開発・本番ともに使えるスタンダードな選択肢です。

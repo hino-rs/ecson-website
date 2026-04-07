@@ -12,8 +12,6 @@ Ecsonは**WebSocket**と**WebTransport**に対応しています。どちらもE
 | WebSocket TLS (WSS) | WS の暗号化版 | 本番環境 |
 | WebTransport | 低レイテンシ・UDP系のデータグラム通信 | ゲーム・リアルタイム位置同期 |
 
-> **Note:** ネットワークプラグインは必ず1つだけ追加してください。複数を同時に追加することはできません。
-
 ## WebSocket
 
 ### 開発用（WS）
